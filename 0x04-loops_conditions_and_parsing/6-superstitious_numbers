@@ -8,18 +8,17 @@
 
 #   "bad luck from Italy" for the 17th loop iteration
 
-count=1
+i=1
 
-while [ $count -ne 21 ]
-	do
-		echo $count
-		case "$count" in
-			4)  echo "bad luck from China"
-				;;
-			9) echo "bad luck from Japan"
-				;;
-			17) echo "bad luck from Italy"
-				;;
-			esac
-			((count++))
-	done
+while ((i <= 20)); do
+	echo $i
+	case "$i" in
+		4) echo bad luck from China
+			;;
+		9) echo bad luck from Japan
+			;;
+		17) echo bad luck from Italy
+			;;
+	esac
+	i=$((i+1))
+done
