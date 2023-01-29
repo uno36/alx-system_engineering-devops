@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
-# ls using for loop
+# Displays the content of the current directory in list format
 
-for i in *; do echo "$i" | cut -d '-' -f 2; done
+LIST="$(ls -1)"
+for i in $LIST; do
+	echo "$i" | cut -d'-' -f2
+done
