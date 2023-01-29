@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 # This script displays current directory in a list format
 
-list=$(ls)
 
-for item in $list
-do
-	echo "$item" | cut -d "-" -f 2
-done
+for f in ./*.c; do echo "Processing $f file..."; done
