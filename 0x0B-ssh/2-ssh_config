@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# SSH configuration file for the SSH local client
+# so that you can connect to a server without typing a password
+Host *
+     IdentityFile ~/.ssh/holberton
+     PasswordAuthentication no
