@@ -1,13 +1,33 @@
 #!/usr/bin/env bash
-# This script installs a nginx web server
+#install ngix and put holberton inside
 
-sudo apt update
-sudo apt install nginx -y
-sudo ufw allow 22
-sudo ufw allow 80
-sudo ufw --force enable
-sudo ufw status
-systemctl status nginx
-echo 'Holberton School' | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
-sudo service nginx restart
-
+sudo apt-get update -y && \
+sudo apt-get install -y nginx
+if [ $? -eq 0 ]
+then
+    echo -e \
+"http {
+    root /var/www/holberton;
+    index index.html;
+    server {
+        listen 80;
+        location \ {
+        }
+    }
+}
+events {
+}" > /etc/nginx/nginx.conf
+    mkdir -p /var/www/holberton
+    echo "Hello World!" > \
+	/var/www/holberton/index.html
+    service nginx start
+    if [ $? -ne 0 ]
+    then
+	"Problem starting nginx"
+	exit 1
+    fi
+else
+    echo "Could not install nginx"
+    exit 1
+fi
+exit 0
