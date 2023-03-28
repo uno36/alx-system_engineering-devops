@@ -1,33 +1,6 @@
 #!/usr/bin/env bash
-#install ngix and put holberton inside
-
-sudo apt-get update -y && \
-sudo apt-get install -y nginx
-if [ $? -eq 0 ]
-then
-    echo -e \
-"http {
-    root /var/www/holberton;
-    index index.html;
-    server {
-        listen 80;
-        location \ {
-        }
-    }
-}
-events {
-}" > /etc/nginx/nginx.conf
-    mkdir -p /var/www/holberton
-    echo "Hello World!" > \
-	/var/www/holberton/index.html
-    service nginx start
-    if [ $? -ne 0 ]
-    then
-	"Problem starting nginx"
-	exit 1
-    fi
-else
-    echo "Could not install nginx"
-    exit 1
-fi
-exit 0
+# Bash script that Install nginx on your web-01 server and requirements
+apt-get update -y
+apt-get install nginx -y
+echo "Hello World!" > /var/www/html/index.html
+service nginx start
