@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Bash script that installs and debugs a docker container
+service apache2 start
