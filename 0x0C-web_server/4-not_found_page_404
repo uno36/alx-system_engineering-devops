@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Bash script that redirects to another page
+apt-get -y update
+apt-get -y install nginx
+echo "Hello world" | sudo tee /var/www/html/index.html
+sudo sed -i "37i \\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\troot /var/www/ht\ml;\n\t\tinternal;\n\t}" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+service nginx restart
