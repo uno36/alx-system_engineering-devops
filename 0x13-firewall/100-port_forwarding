@@ -1,0 +1,24 @@
+sudo apt-get install ufw
+
+sudo ufw default deny incoming
+
+sudo ufw allow 22/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 80/tcp
+
+sudo ufw enable
+
+ssh admin@web-01
+
+sudo ufw status
+
+sudo ufw allow 8080/tcp
+
+sudo nano /etc/ufw/before.rules
+
+*nat
+:PREROUTING ACCEPT [0:0]
+-A PREROUTING -p tcp --dport 8080 -j REDIRECT --to-port 80
+COMMIT
+
+sudo ufw reload
