@@ -10,7 +10,7 @@ API Authentication is the process of identifying the user or application that is
 
 - **API keys**: A simple way to authenticate requests by providing a unique key with each request. API keys can be restricted to specific IP addresses or used for rate limiting.
 - **OAuth**: A more complex authentication protocol that involves user authorization and delegation of access rights. OAuth is commonly used by social media platforms and other web services.
-- **JSON Web Tokens (JWT)**: A lightweight, secure, and stateless way of transmitting information between parties as a JSON object. JWTs can be used for authentication, authorization, and data exchange.
+- **JSON Web Tokens (JWT)**: A lightweight, secure, and stateless way of transmitting information between parties as a JSON object. JWTs can be used for authentication, authorization, and data exchange
 
 ## API Rate Limiting
 
